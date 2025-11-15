@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Welcome 🎉</h2>
+    <p id="joke">Loading a funny joke for you...</p>
+    <button onclick="getJoke()">😂 New Joke</button>
+    <br /><br />
+    <a href="/">Logout</a>
+  </div>
+
+  <script>
+    async function getJoke() {
+      const jokes = [
+        "Why don’t programmers like nature? It has too many bugs!",
+        "Why do Java developers wear glasses? Because they don’t see sharp.",
+        "What do you call a programmer from Finland? Nerdic!",
+        "I told my computer I needed a break, and it said: 'You seem stressed, shall I crash?'",
+        "Why did the developer go broke? Because he used up all his cache."
+      ];
+      const random = jokes[Math.floor(Math.random() * jokes.length)];
+      document.getElementById("joke").innerText = random;
+    }
+
+    // Load a joke when page opens
+    getJoke();
+  </script>
+</body>
+</html>
